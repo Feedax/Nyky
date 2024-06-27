@@ -123,25 +123,22 @@ h1 {
     }
 }
 
-/* Styles for the confetti */
 #confettiContainer {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* Make sure the confetti doesn't interfere with button clicks */
-    z-index: 1000; /* Ensure it's above everything */
+    pointer-events: none;
+    z-index: 1000; 
   }
-  
-  /* Confetti particle style */
   .confetti {
     width: 3px;
     height: 10px;
     position: absolute;
-    background-color: #f00; /* Red color for confetti, can be replaced with an image */
+    background-color: #f00; 
     border-radius: 0%;
-    pointer-events: none; /* Ensure clicks go through confetti */
+    pointer-events: none; 
     animation: confettiExplode 1.5s ease-out forwards;
   }
   
@@ -151,7 +148,7 @@ h1 {
       opacity: 1;
     }
     100% {
-      transform: translate(var(--tx), var(--ty)) rotate(720deg); /* Use custom properties for translation */
+      transform: translate(var(--tx), var(--ty)) rotate(720deg);
       opacity: 0;
     }
   }
