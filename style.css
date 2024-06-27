@@ -1,3 +1,4 @@
+/* Base Styles */
 body {
     background-color: #F4D8CD;
     font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -17,17 +18,16 @@ h1 {
     background-color: #EDB183;
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 60%; /* Full width of viewport */
+    width: 60%;
     max-width: 60%;
     height: 600px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    text-align: center;
     position: relative;
-    overflow: hidden; /* Ensure confetti stays within the container */
-    margin: 20px auto; /* Center the container */
-    transition: background 2s ease; /* Smooth transition for container height */
+    overflow: hidden;
+    margin: auto;
+    margin-top: 20px;
+    transition: background 2s ease;
 }
 .bg{
     position: absolute;
@@ -50,45 +50,79 @@ h1 {
     align-items: center;
     position: relative;
     justify-content: center;
-    transition: opacity 2s ease; /* Smooth transition for container height */
+    transition: opacity 2s ease;
 }
 .container.fade-out{
     opacity: 0;
 }
 .gift-button {
     display: flex;
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
-    padding: 10px 0px; /* Adjust padding for button size */
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px;
     font-size: 1.1em;
     cursor: pointer;
     background-color: #1E555C;
     color: #F15152;
     border: none;
-    border-radius: 12px; /* Larger border radius for rounded corners */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased box shadow */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease, transform 0.3s ease;
     position: relative;
     overflow: hidden;
-    margin-bottom: 20px; /* Space between button and flower image */
-    z-index: 1; /* Ensure button is above confetti */
-    width: 35%; /* Fixed width for the button */
+    margin-bottom: 20px;
+    z-index: 1;
+    width: 35%;
 }
 .gift-button:hover {
     background-color: #19474D;
     color: #F15152;
 }
 .gift-button img {
-    width: 50px; /* Adjust image size */
-    height: 50px; /* Adjust image size */
-    border-radius: 5px; /* Keep image squared */
-    margin-right: 10px; /* Space between icon and text */
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 10px;
     transition: opacity 0.3s ease;
 }
 .gift-button .text {
-    margin-top: 5px; /* Space between image and text */
-    text-align: left; /* Align text to the left */
+    margin-top: 5px;
+    text-align: left;
 }
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .main-container {
+        width: 80%;
+        max-width: 80%;
+        height: auto; /* Let the height adjust based on content */
+        padding: 10px;
+    }
+    .gift-button {
+        width: 50%;
+    }
+    h1 {
+        font-size: 2em; /* Adjusted font-size for smaller screens */
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .main-container {
+        width: 80%;
+        height: auto;
+        padding: 10px;
+        align-items: center;
+    }
+    .gift-button {
+        width: 80%;
+        font-size: 1em; /* Smaller font-size for very small screens */
+        padding: 8px 0px; /* Smaller padding */
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+}
+
 /* Styles for the confetti */
 #confettiContainer {
     position: fixed;
