@@ -1,0 +1,124 @@
+body {
+    background-color: #F4D8CD;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #3A2E39;
+}
+.Nyky{
+    color: #F15152;
+}
+.main-container {
+    background-color: #EDB183;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%; /* Full width of viewport */
+    max-width: 60%;
+    height: 600px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Ensure confetti stays within the container */
+    margin: 20px auto; /* Center the container */
+    transition: background 2s ease; /* Smooth transition for container height */
+}
+.bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("flowers.png") no-repeat center;
+    background-size: contain;
+    opacity: 0;
+    transition: opacity 2s ease;
+    z-index: 1;
+}
+.main-container.fade-in .bg{
+    opacity: 1;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    transition: opacity 2s ease; /* Smooth transition for container height */
+}
+.container.fade-out{
+    opacity: 0;
+}
+.gift-button {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    padding: 10px 0px; /* Adjust padding for button size */
+    font-size: 1.1em;
+    cursor: pointer;
+    background-color: #1E555C;
+    color: #F15152;
+    border: none;
+    border-radius: 12px; /* Larger border radius for rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased box shadow */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px; /* Space between button and flower image */
+    z-index: 1; /* Ensure button is above confetti */
+    width: 35%; /* Fixed width for the button */
+}
+.gift-button:hover {
+    background-color: #19474D;
+    color: #F15152;
+}
+.gift-button img {
+    width: 50px; /* Adjust image size */
+    height: 50px; /* Adjust image size */
+    border-radius: 5px; /* Keep image squared */
+    margin-right: 10px; /* Space between icon and text */
+    transition: opacity 0.3s ease;
+}
+.gift-button .text {
+    margin-top: 5px; /* Space between image and text */
+    text-align: left; /* Align text to the left */
+}
+/* Styles for the confetti */
+#confettiContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Make sure the confetti doesn't interfere with button clicks */
+    z-index: 1000; /* Ensure it's above everything */
+  }
+  
+  /* Confetti particle style */
+  .confetti {
+    width: 3px;
+    height: 10px;
+    position: absolute;
+    background-color: #f00; /* Red color for confetti, can be replaced with an image */
+    border-radius: 0%;
+    pointer-events: none; /* Ensure clicks go through confetti */
+    animation: confettiExplode 1.5s ease-out forwards;
+  }
+  
+  @keyframes confettiExplode {
+    0% {
+      transform: translate(0, 0) rotate(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(var(--tx), var(--ty)) rotate(720deg); /* Use custom properties for translation */
+      opacity: 0;
+    }
+  }
+
